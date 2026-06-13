@@ -20,6 +20,10 @@
 #define INDEX_STREAK_DECAY 100
 #define INDEX_REPEAT_DECAY 300
 
+#define THUMB_HOLDING_TIME 200
+#define THUMB_REPEAT_DECAY 300
+#define SPACE_REPEAT_DECAY 150
+
 / {
         behaviors {
                 lhm: left_home_row_mod {
@@ -69,6 +73,33 @@
                         #binding-cells = <2>;
                         bindings = <&kp>, <&kp>;
                 };
+
+                thumb: thumb_layer_tap {
+                        compatible = "zmk,behavior-hold-tap";
+                        flavor = "balanced";
+                        tapping-term-ms = <THUMB_HOLDING_TIME>;
+                        quick-tap-ms = <THUMB_REPEAT_DECAY>;
+                        #binding-cells = <2>;
+                        bindings = <&mo>, <&kp>;
+                };
+
+                space: space_layer_tap {
+                        compatible = "zmk,behavior-hold-tap";
+                        flavor = "balanced";
+                        tapping-term-ms = <THUMB_HOLDING_TIME>;
+                        quick-tap-ms = <SPACE_REPEAT_DECAY>;
+                        #binding-cells = <2>;
+                        bindings = <&mo>, <&kp>;
+                };
+
+                thm: thumb_mod_tap {
+                        compatible = "zmk,behavior-hold-tap";
+                        flavor = "balanced";
+                        tapping-term-ms = <THUMB_HOLDING_TIME>;
+                        quick-tap-ms = <THUMB_REPEAT_DECAY>;
+                        #binding-cells = <2>;
+                        bindings = <&kp>, <&kp>;
+                };
         };
 };
 
@@ -87,7 +118,7 @@
    &kp TAB   &kp Q &kp W &kp F &kp P &kp B   &kp J &kp L  &kp U     &kp Y   &kp SEMI &kp BSPC
    &kp LCTRL &lhm LCTRL A &lhm LALT R &lhm LGUI S &lihm LSHFT T &kp G   &kp M &rihm LSHFT N &rhm LGUI E &rhm LALT I &rhm LCTRL O &kp SQT
    &kp LSHFT &kp Z &kp X &kp C &kp D &kp V   &kp K &kp H  &kp COMMA &kp DOT &kp FSLH &kp ESC
-                  &kp LGUI &lt 1 BSPC &lt 3 SPACE   &mt LS(LG(LC(LALT))) RET &mo 2 &kp RALT
+                  &kp LGUI &thumb 1 BSPC &space 3 SPACE   &thm LS(LG(LC(LALT))) RET &mo 2 &kp RALT
                         >;
                 };
                 number_layer {
