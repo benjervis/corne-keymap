@@ -8,6 +8,70 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
+#define LEFT_HAND_KEYS  0  1  2  3  4  5 12 13 14 15 16 17 24 25 26 27 28 29
+#define RIGHT_HAND_KEYS 6  7  8  9 10 11 18 19 20 21 22 23 30 31 32 33 34 35
+#define THUMB_KEYS     36 37 38 39 40 41
+
+#define HOMEY_HOLDING_TIME 240
+#define HOMEY_STREAK_DECAY 160
+#define HOMEY_REPEAT_DECAY 300
+
+#define INDEX_HOLDING_TIME 180
+#define INDEX_STREAK_DECAY 100
+#define INDEX_REPEAT_DECAY 300
+
+/ {
+        behaviors {
+                lhm: left_home_row_mod {
+                        compatible = "zmk,behavior-hold-tap";
+                        flavor = "tap-preferred";
+                        hold-trigger-key-positions = <RIGHT_HAND_KEYS THUMB_KEYS>;
+                        hold-trigger-on-release;
+                        tapping-term-ms = <HOMEY_HOLDING_TIME>;
+                        quick-tap-ms = <HOMEY_REPEAT_DECAY>;
+                        require-prior-idle-ms = <HOMEY_STREAK_DECAY>;
+                        #binding-cells = <2>;
+                        bindings = <&kp>, <&kp>;
+                };
+
+                rhm: right_home_row_mod {
+                        compatible = "zmk,behavior-hold-tap";
+                        flavor = "tap-preferred";
+                        hold-trigger-key-positions = <LEFT_HAND_KEYS THUMB_KEYS>;
+                        hold-trigger-on-release;
+                        tapping-term-ms = <HOMEY_HOLDING_TIME>;
+                        quick-tap-ms = <HOMEY_REPEAT_DECAY>;
+                        require-prior-idle-ms = <HOMEY_STREAK_DECAY>;
+                        #binding-cells = <2>;
+                        bindings = <&kp>, <&kp>;
+                };
+
+                lihm: left_index_home_row_mod {
+                        compatible = "zmk,behavior-hold-tap";
+                        flavor = "tap-preferred";
+                        hold-trigger-key-positions = <RIGHT_HAND_KEYS THUMB_KEYS>;
+                        hold-trigger-on-release;
+                        tapping-term-ms = <INDEX_HOLDING_TIME>;
+                        quick-tap-ms = <INDEX_REPEAT_DECAY>;
+                        require-prior-idle-ms = <INDEX_STREAK_DECAY>;
+                        #binding-cells = <2>;
+                        bindings = <&kp>, <&kp>;
+                };
+
+                rihm: right_index_home_row_mod {
+                        compatible = "zmk,behavior-hold-tap";
+                        flavor = "tap-preferred";
+                        hold-trigger-key-positions = <LEFT_HAND_KEYS THUMB_KEYS>;
+                        hold-trigger-on-release;
+                        tapping-term-ms = <INDEX_HOLDING_TIME>;
+                        quick-tap-ms = <INDEX_REPEAT_DECAY>;
+                        require-prior-idle-ms = <INDEX_STREAK_DECAY>;
+                        #binding-cells = <2>;
+                        bindings = <&kp>, <&kp>;
+                };
+        };
+};
+
 / {
         keymap {
                 compatible = "zmk,keymap";
@@ -15,13 +79,13 @@
                 default_layer {
 // -----------------------------------------------------------------------------------------
 // |  TAB |  Q  |  W  |  F  |  P  |  B  |   |  J  |  L   |  U  |  Y  |  ;  | BKSP |
-// | CTRL |  A  |  R  |  S  |  T  |  G  |   |  M  |  N   |  E  |  I  |  O  |  '   |
+// | CTRL | A/C | R/A | S/G | T/S |  G  |   |  M  | N/S  | E/G | I/A | O/C |  '   |
 // | SHFT |  Z  |  X  |  C  |  D  |  V  |   |  K  |  H   |  ,  |  .  |  /  | ESC  |
 //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
                         display-name = "Base";
                         bindings = <
    &kp TAB   &kp Q &kp W &kp F &kp P &kp B   &kp J &kp L  &kp U     &kp Y   &kp SEMI &kp BSPC
-   &kp LCTRL &kp A &kp R &kp S &kp T &kp G   &kp M &kp N  &kp E     &kp I   &kp O    &kp SQT
+   &kp LCTRL &lhm LCTRL A &lhm LALT R &lhm LGUI S &lihm LSHFT T &kp G   &kp M &rihm LSHFT N &rhm LGUI E &rhm LALT I &rhm LCTRL O &kp SQT
    &kp LSHFT &kp Z &kp X &kp C &kp D &kp V   &kp K &kp H  &kp COMMA &kp DOT &kp FSLH &kp ESC
                   &kp LGUI &mo 1 &kp SPACE   &kp RET &mo 2 &kp RALT
                         >;
