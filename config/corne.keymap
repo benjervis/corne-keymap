@@ -7,6 +7,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
 
 #define LEFT_HAND_KEYS  0  1  2  3  4  5 12 13 14 15 16 17 24 25 26 27 28 29
 #define RIGHT_HAND_KEYS 6  7  8  9 10 11 18 19 20 21 22 23 30 31 32 33 34 35
@@ -104,6 +105,19 @@
 };
 
 / {
+        combos {
+                compatible = "zmk,combos";
+
+                combo_system_layer_toggle {
+                        timeout-ms = <50>;
+                        key-positions = <0 11>;
+                        bindings = <&tog 4>;
+                        layers = <0>;
+                };
+        };
+};
+
+/ {
         keymap {
                 compatible = "zmk,keymap";
 
@@ -166,8 +180,19 @@
                         >;
                 };
 
-                extra_2 {
-                        status = "reserved";
+                system_layer {
+// -----------------------------------------------------------------------------------------
+// | OFF  | BT0 | BT1 | BT2 | BT3 | BT4 |   | USB | BLE | CLR |CLRA | BOOT| RSET |
+// |      |     |     |     |     |     |   | PSCR|SLCK |PAUS |     |     |      |
+// |      |     |     |     |     |     |   |     |     |     |     |     |      |
+//                    |     |     |     |   |     |     |     |
+                        display-name = "System";
+                        bindings = <
+   &tog 4 &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &out OUT_USB &out OUT_BLE &bt BT_CLR &bt BT_CLR_ALL &bootloader &sys_reset
+   &none  &none        &none        &none        &none        &none          &kp PSCRN    &kp SLCK     &kp PAUSE_BREAK &none   &none       &none
+   &none  &none        &none        &none        &none        &none          &none        &none        &none           &none   &none       &none
+                  &trans &trans &trans   &trans &trans &trans
+                        >;
                 };
 
                 extra_3 {
