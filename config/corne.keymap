@@ -101,6 +101,14 @@
                         #binding-cells = <2>;
                         bindings = <&kp>, <&kp>;
                 };
+
+                behavior_caps_word {
+                        continue-list = <
+                            UNDERSCORE MINUS
+                            BACKSPACE DELETE
+                            N1 N2 N3 N4 N5 N6 N7 N8 N9 N0
+                        >;
+                };
         };
 };
 
@@ -168,13 +176,13 @@
                 arrow_layer {
 // -----------------------------------------------------------------------------------------
 // |      |     |     |     |     |     |   | INS | DEL | TAB | SPC | RET | ESC |
-// |      |     |     |     |     |     |   | BSP | LFT |  UP | DWN | RGT |     |
+// |      |     |     |     | CAPS|     |   | BSP | LFT |  UP | DWN | RGT |     |
 // |      |     |     |     |     |     |   | HOM | PGU | PGD | END |     |     |
 //                    |     |     |     |   |     |     |     |
                         display-name = "Arrows";
                         bindings = <
    &trans &trans &trans &trans &trans &trans   &kp INS  &kp DEL   &kp TAB   &kp SPACE &kp RET   &kp ESC
-   &trans &trans &trans &trans &trans &trans   &kp BSPC &kp LEFT  &kp UP    &kp DOWN  &kp RIGHT &none
+   &trans &trans &trans &trans &caps_word &trans   &kp BSPC &kp LEFT  &kp UP    &kp DOWN  &kp RIGHT &none
    &trans &trans &trans &trans &trans &trans   &kp HOME &kp PG_UP &kp PG_DN &kp END   &none     &none
                   &trans &trans &trans   &trans &trans &trans
                         >;
