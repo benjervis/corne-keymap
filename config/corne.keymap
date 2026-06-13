@@ -43,13 +43,13 @@
 // |  TAB |  Q  |  W  |  F  |  P  |  B  |   |  J  |  L   |  U  |  Y  |  ;  | BKSP |
 // | CTRL | A/C | R/A | S/G | T/S |  G  |   |  M  | N/S  | E/G | I/A | O/C |  '   |
 // | SHFT |  Z  |  X  |  C  |  D  |  V  |   |  K  |  H   |  ,  |  .  |  /  | ESC  |
-//                    | GUI | BKSP| ARR |   | HYP | SYM  | ALT |
+//                    | GUI | BKSP| ARR |   | HYP | ESC/SYM | ALT |
                         display-name = "Base";
                         bindings = <
    &kp TAB   &kp Q &kp W &kp F &kp P &kp B   &kp J &kp L  &kp U     &kp Y   &kp SEMI &kp BSPC
    &kp LCTRL &mt LCTRL A &mt LALT R &mt LGUI S &mt LSHFT T &kp G   &kp M &mt LSHFT N &mt LGUI E &mt LALT I &mt LCTRL O &kp SQT
    &kp LSHFT &kp Z &kp X &kp C &kp D &kp V   &kp K &kp H  &kp COMMA &kp DOT &kp FSLH &kp ESC
-                  &kp LGUI &lt 1 BSPC &lt 3 SPACE   &mt LS(LG(LC(LALT))) RET &mo 2 &kp RALT
+                  &kp LGUI &lt 1 BSPC &lt 3 SPACE   &mt LS(LG(LC(LALT))) RET &lt 2 ESC &kp RALT
                         >;
                 };
                 number_layer {
