@@ -9,77 +9,8 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
 
-#define HOMEY_HOLDING_TIME 240
-#define HOMEY_STREAK_DECAY 160
-#define HOMEY_REPEAT_DECAY 300
-
-#define INDEX_HOLDING_TIME 180
-#define INDEX_STREAK_DECAY 100
-#define INDEX_REPEAT_DECAY 300
-
-#define THUMB_HOLDING_TIME 200
-#define THUMB_REPEAT_DECAY 300
-
 / {
         behaviors {
-                lhm: left_home_row_mod {
-                        compatible = "zmk,behavior-hold-tap";
-                        flavor = "tap-preferred";
-                        tapping-term-ms = <HOMEY_HOLDING_TIME>;
-                        quick-tap-ms = <HOMEY_REPEAT_DECAY>;
-                        require-prior-idle-ms = <HOMEY_STREAK_DECAY>;
-                        #binding-cells = <2>;
-                        bindings = <&kp>, <&kp>;
-                };
-
-                rhm: right_home_row_mod {
-                        compatible = "zmk,behavior-hold-tap";
-                        flavor = "tap-preferred";
-                        tapping-term-ms = <HOMEY_HOLDING_TIME>;
-                        quick-tap-ms = <HOMEY_REPEAT_DECAY>;
-                        require-prior-idle-ms = <HOMEY_STREAK_DECAY>;
-                        #binding-cells = <2>;
-                        bindings = <&kp>, <&kp>;
-                };
-
-                lihm: left_index_home_row_mod {
-                        compatible = "zmk,behavior-hold-tap";
-                        flavor = "tap-preferred";
-                        tapping-term-ms = <INDEX_HOLDING_TIME>;
-                        quick-tap-ms = <INDEX_REPEAT_DECAY>;
-                        require-prior-idle-ms = <INDEX_STREAK_DECAY>;
-                        #binding-cells = <2>;
-                        bindings = <&kp>, <&kp>;
-                };
-
-                rihm: right_index_home_row_mod {
-                        compatible = "zmk,behavior-hold-tap";
-                        flavor = "tap-preferred";
-                        tapping-term-ms = <INDEX_HOLDING_TIME>;
-                        quick-tap-ms = <INDEX_REPEAT_DECAY>;
-                        require-prior-idle-ms = <INDEX_STREAK_DECAY>;
-                        #binding-cells = <2>;
-                        bindings = <&kp>, <&kp>;
-                };
-
-                thumb: thumb_layer_tap {
-                        compatible = "zmk,behavior-hold-tap";
-                        flavor = "balanced";
-                        tapping-term-ms = <THUMB_HOLDING_TIME>;
-                        quick-tap-ms = <THUMB_REPEAT_DECAY>;
-                        #binding-cells = <2>;
-                        bindings = <&mo>, <&kp>;
-                };
-
-                thm: thumb_mod_tap {
-                        compatible = "zmk,behavior-hold-tap";
-                        flavor = "balanced";
-                        tapping-term-ms = <THUMB_HOLDING_TIME>;
-                        quick-tap-ms = <THUMB_REPEAT_DECAY>;
-                        #binding-cells = <2>;
-                        bindings = <&kp>, <&kp>;
-                };
-
                 behavior_caps_word {
                         continue-list = <
                             UNDERSCORE MINUS
@@ -116,9 +47,9 @@
                         display-name = "Base";
                         bindings = <
    &kp TAB   &kp Q &kp W &kp F &kp P &kp B   &kp J &kp L  &kp U     &kp Y   &kp SEMI &kp BSPC
-   &kp LCTRL &lhm LCTRL A &lhm LALT R &lhm LGUI S &lihm LSHFT T &kp G   &kp M &rihm LSHFT N &rhm LGUI E &rhm LALT I &rhm LCTRL O &kp SQT
+   &kp LCTRL &mt LCTRL A &mt LALT R &mt LGUI S &mt LSHFT T &kp G   &kp M &mt LSHFT N &mt LGUI E &mt LALT I &mt LCTRL O &kp SQT
    &kp LSHFT &kp Z &kp X &kp C &kp D &kp V   &kp K &kp H  &kp COMMA &kp DOT &kp FSLH &kp ESC
-                  &kp LGUI &thumb 1 BSPC &lt 3 SPACE   &thm LS(LG(LC(LALT))) RET &mo 2 &kp RALT
+                  &kp LGUI &lt 1 BSPC &lt 3 SPACE   &mt LS(LG(LC(LALT))) RET &mo 2 &kp RALT
                         >;
                 };
                 number_layer {
