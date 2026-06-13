@@ -81,26 +81,26 @@
 // |  TAB |  Q  |  W  |  F  |  P  |  B  |   |  J  |  L   |  U  |  Y  |  ;  | BKSP |
 // | CTRL | A/C | R/A | S/G | T/S |  G  |   |  M  | N/S  | E/G | I/A | O/C |  '   |
 // | SHFT |  Z  |  X  |  C  |  D  |  V  |   |  K  |  H   |  ,  |  .  |  /  | ESC  |
-//                    | GUI | LWR | SPC |   | HYP | RSE  | ALT |
+//                    | GUI | BKSP| SPC |   | HYP | SYM  | ALT |
                         display-name = "Base";
                         bindings = <
    &kp TAB   &kp Q &kp W &kp F &kp P &kp B   &kp J &kp L  &kp U     &kp Y   &kp SEMI &kp BSPC
    &kp LCTRL &lhm LCTRL A &lhm LALT R &lhm LGUI S &lihm LSHFT T &kp G   &kp M &rihm LSHFT N &rhm LGUI E &rhm LALT I &rhm LCTRL O &kp SQT
    &kp LSHFT &kp Z &kp X &kp C &kp D &kp V   &kp K &kp H  &kp COMMA &kp DOT &kp FSLH &kp ESC
-                  &kp LGUI &mo 1 &kp SPACE   &mt LS(LG(LC(LALT))) RET &mo 2 &kp RALT
+                  &kp LGUI &lt 1 BSPC &kp SPACE   &mt LS(LG(LC(LALT))) RET &mo 2 &kp RALT
                         >;
                 };
-                lower_layer {
+                number_layer {
 // -----------------------------------------------------------------------------------------
-// |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
-// | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
-// | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
+// |  ^   |  $  |  #  |  @  |  !  | "|" |   |  +  |  7  |  8  |  9  |  -  |  :   |
+// |  %   |  <  |  >  |  =  |  *  |  /  |   |  =  |  4  |  5  |  6  |  *  |  /   |
+// |      |     |     |     |     |     |   |  ,  |  1  |  2  |  3  |  0  |  .   |
 //                    | GUI |     | SPC |   | ENT |     | ALT |
-                        display-name = "Lower";
+                        display-name = "Numbers";
                         bindings = <
-   &kp TAB    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &kp BSPC
-   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
-   &kp LSHFT  &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans &trans
+   &kp CARET &kp DLLR &kp HASH &kp AT    &kp EXCL &kp PIPE    &kp KP_PLUS  &kp KP_N7 &kp KP_N8 &kp KP_N9 &kp KP_MINUS    &kp LS(SEMI)
+   &kp PRCNT &kp LT   &kp GT   &kp EQUAL &kp STAR &kp FSLH    &kp KP_EQUAL &kp KP_N4 &kp KP_N5 &kp KP_N6 &kp KP_MULTIPLY &kp KP_SLASH
+   &none     &none    &none    &none     &none    &none       &kp COMMA    &kp KP_N1 &kp KP_N2 &kp KP_N3 &kp KP_N0       &kp KP_DOT
                           	        &kp LGUI     &trans       &kp SPACE      &kp RET  &trans   &kp RALT
                         >;
                 };
