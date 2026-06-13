@@ -176,13 +176,13 @@
                 arrow_layer {
 // -----------------------------------------------------------------------------------------
 // |      |     |     |     |     |     |   | INS | DEL | TAB | SPC | RET | ESC |
-// |      |     |     |     | CAPS|     |   | BSP | LFT |  UP | DWN | RGT |     |
+// |      | CTL | ALT | GUI | SHFT| CAPS|   | BSP | LFT |  UP | DWN | RGT |     |
 // |      |     |     |     |     |     |   | HOM | PGU | PGD | END |     |     |
 //                    |     |     |     |   |     |     |     |
                         display-name = "Arrows";
                         bindings = <
    &trans &trans &trans &trans &trans &trans   &kp INS  &kp DEL   &kp TAB   &kp SPACE &kp RET   &kp ESC
-   &trans &trans &trans &trans &caps_word &trans   &kp BSPC &kp LEFT  &kp UP    &kp DOWN  &kp RIGHT &none
+   &trans &kp LCTRL &kp LALT &kp LGUI &kp LSHFT &caps_word   &kp BSPC &kp LEFT  &kp UP    &kp DOWN  &kp RIGHT &none
    &trans &trans &trans &trans &trans &trans   &kp HOME &kp PG_UP &kp PG_DN &kp END   &none     &none
                   &trans &trans &trans   &trans &trans &trans
                         >;
