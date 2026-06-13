@@ -81,13 +81,13 @@
 // |  TAB |  Q  |  W  |  F  |  P  |  B  |   |  J  |  L   |  U  |  Y  |  ;  | BKSP |
 // | CTRL | A/C | R/A | S/G | T/S |  G  |   |  M  | N/S  | E/G | I/A | O/C |  '   |
 // | SHFT |  Z  |  X  |  C  |  D  |  V  |   |  K  |  H   |  ,  |  .  |  /  | ESC  |
-//                    | GUI | BKSP| SPC |   | HYP | SYM  | ALT |
+//                    | GUI | BKSP| ARR |   | HYP | SYM  | ALT |
                         display-name = "Base";
                         bindings = <
    &kp TAB   &kp Q &kp W &kp F &kp P &kp B   &kp J &kp L  &kp U     &kp Y   &kp SEMI &kp BSPC
    &kp LCTRL &lhm LCTRL A &lhm LALT R &lhm LGUI S &lihm LSHFT T &kp G   &kp M &rihm LSHFT N &rhm LGUI E &rhm LALT I &rhm LCTRL O &kp SQT
    &kp LSHFT &kp Z &kp X &kp C &kp D &kp V   &kp K &kp H  &kp COMMA &kp DOT &kp FSLH &kp ESC
-                  &kp LGUI &lt 1 BSPC &kp SPACE   &mt LS(LG(LC(LALT))) RET &mo 2 &kp RALT
+                  &kp LGUI &lt 1 BSPC &lt 3 SPACE   &mt LS(LG(LC(LALT))) RET &mo 2 &kp RALT
                         >;
                 };
                 number_layer {
@@ -120,8 +120,19 @@
                         >;
                 };
 
-                extra_1 {
-                        status = "reserved";
+                arrow_layer {
+// -----------------------------------------------------------------------------------------
+// |      |     |     |     |     |     |   | INS | DEL | TAB | SPC | RET | ESC |
+// |      |     |     |     |     |     |   | BSP | LFT |  UP | DWN | RGT |     |
+// |      |     |     |     |     |     |   | HOM | PGU | PGD | END |     |     |
+//                    |     |     |     |   |     |     |     |
+                        display-name = "Arrows";
+                        bindings = <
+   &trans &trans &trans &trans &trans &trans   &kp INS  &kp DEL   &kp TAB   &kp SPACE &kp RET   &kp ESC
+   &trans &trans &trans &trans &trans &trans   &kp BSPC &kp LEFT  &kp UP    &kp DOWN  &kp RIGHT &none
+   &trans &trans &trans &trans &trans &trans   &kp HOME &kp PG_UP &kp PG_DN &kp END   &none     &none
+                  &trans &trans &trans   &trans &trans &trans
+                        >;
                 };
 
                 extra_2 {
