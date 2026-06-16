@@ -1,0 +1,8 @@
+# Copyright (c) 2026 The ZMK Contributors
+# SPDX-License-Identifier: MIT
+
+config SHIELD_NICE_VIEW_MODS
+    def_bool $(shields_list_contains,nice_view_mods)
+    select LV_FONT_MONTSERRAT_14
+    select LV_FONT_MONTSERRAT_16
+    select LV_FONT_MONTSERRAT_18
