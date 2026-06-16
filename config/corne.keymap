@@ -134,13 +134,13 @@
 // |  TAB |  Q  |  W  |  F  |  P  |  B  |   |  J  |  L   |  U  |  Y  |  ;  | BKSP |
 // | CTRL | A/C | R/A | S/G | T/S |  G  |   |  M  | N/S  | E/G | I/A | O/C |  '   |
 // | SHFT |  Z  |  X  |  C  |  D  |  V  |   |  K  |  H   |  ,  |  .  |  /  | ESC  |
-//                    | GUI | BKSP| ARR |   | HYP | ESC/SYM | ALT |
+//                    | GUI | BKSP| ARR |   | HYP | ESC/SYM | RAY |
                         display-name = "Base";
                         bindings = <
    &kp TAB   &kp Q &kp W &kp F &kp P &kp B   &kp J &kp L  &kp U     &kp Y   &kp SEMI &kp BSPC
    &kp LCTRL &lhm LCTRL A &lhm LALT R &lhm LGUI S &lihm LSHFT T &kp G   &kp M &rihm LSHFT N &rhm LGUI E &rhm LALT I &rhm LCTRL O &kp SQT
    &kp LSHFT &kp Z &kp X &kp C &kp D &kp V   &kp K &kp H  &kp COMMA &kp DOT &kp FSLH &kp ESC
-                  &kp LGUI &thumb 1 BSPC &space 3 SPACE   &thm LS(LG(LC(LALT))) RET &thumb 2 ESC &kp RALT
+                  &kp LGUI &thumb 1 BSPC &space 3 SPACE   &thm LS(LG(LC(LALT))) RET &thumb 2 ESC &kp LG(SPACE)
                         >;
                 };
                 number_layer {
@@ -148,13 +148,13 @@
 // |  ^   |  $  |  #  |  @  |  !  | "|" |   |  +  |  7  |  8  |  9  |  -  |  :   |
 // |      | CTL | ALT | GUI | SHFT| CAPS|   |  =  |  4  |  5  |  6  |  *  |  /   |
 // |      |     |     |     |     |     |   |  ,  |  1  |  2  |  3  |  0  |  .   |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
+//                    | GUI |     | SPC |   | ENT |     | RAY |
                         display-name = "Numbers";
                         bindings = <
    &kp CARET &kp DLLR &kp HASH &kp AT    &kp EXCL &kp PIPE    &kp KP_PLUS  &kp KP_N7 &kp KP_N8 &kp KP_N9 &kp KP_MINUS    &kp LS(SEMI)
    &none     &kp LCTRL &kp LALT &kp LGUI &kp LSHFT &caps_word  &kp KP_EQUAL &kp KP_N4 &kp KP_N5 &kp KP_N6 &kp KP_MULTIPLY &kp KP_SLASH
    &none     &none    &none    &none     &none    &none       &kp COMMA    &kp KP_N1 &kp KP_N2 &kp KP_N3 &kp KP_N0       &kp KP_DOT
-                          	        &kp LGUI     &trans       &kp SPACE      &kp RET  &trans   &kp RALT
+                          	        &kp LGUI     &trans       &kp SPACE      &kp RET  &trans   &kp LG(SPACE)
                         >;
                 };
 
@@ -163,13 +163,13 @@
 // |  !   |  ~  |  {  |  }  |  _  |  &  |   |  ;  |  [  |  ]  |     |     |      |
 // |  #   |  ^  |  (  |  )  |  $  |  *  |   |  .  |  @  |  !  |  \  |  +  |      |
 // |  @   |  <  |  =  |  -  |  >  |  `  |   |  /  | "|" |  ?  |  .  |  /  |      |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
+//                    | GUI |     | SPC |   | ENT |     | RAY |
                         display-name = "Symbols";
                         bindings = <
    &kp EXCL &kp TILDE &kp LBRC  &kp RBRC  &kp UNDER &kp AMPS    &kp SEMI &kp LBKT &kp RBKT  &none     &none   &none
    &kp HASH &kp CARET &kp LPAR  &kp RPAR  &kp DLLR  &kp STAR    &kp DOT  &kp AT   &kp EXCL  &kp BSLH  &kp PLUS &none
    &kp AT   &kp LT    &kp EQUAL &kp MINUS &kp GT    &kp GRAVE   &kp FSLH &kp PIPE &kp QMARK &kp DOT   &kp FSLH &none
-                    	     &kp LGUI &trans   &kp SPACE   &kp RET   &trans    &kp RALT
+                    	     &kp LGUI &trans   &kp SPACE   &kp RET   &trans    &kp LG(SPACE)
                         >;
                 };
 
