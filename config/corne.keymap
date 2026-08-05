@@ -131,30 +131,30 @@
 
                 default_layer {
 // -----------------------------------------------------------------------------------------
-// |  TAB |  Q  |  W  |  F  |  P  |  B  |   |  J  |  L   |  U  |  Y  |  ;  | BKSP |
+// | CAPS |  Q  |  W  |  F  |  P  |  B  |   |  J  |  L   |  U  |  Y  |  ;  | BKSP |
 // | CTRL | A/C | R/A | S/G | T/S |  G  |   |  M  | N/S  | E/G | I/A | O/C |  '   |
 // | SHFT |  Z  |  X  |  C  |  D  |  V  |   |  K  |  H   |  ,  |  .  |  /  | ESC  |
-//                    | GUI | BKSP| ARR |   | HYP | ESC/SYM | RAY |
+//                    | TAB | BKSP| ARR |   | HYP | ESC/SYM | RAY |
                         display-name = "Base";
                         bindings = <
-   &kp TAB   &kp Q &kp W &kp F &kp P &kp B   &kp J &kp L  &kp U     &kp Y   &kp SEMI &kp BSPC
+   &caps_word &kp Q &kp W &kp F &kp P &kp B   &kp J &kp L  &kp U     &kp Y   &kp SEMI &kp BSPC
    &kp LCTRL &lhm LCTRL A &lhm LALT R &lhm LGUI S &lihm LSHFT T &kp G   &kp M &rihm LSHFT N &rhm LGUI E &rhm LALT I &rhm LCTRL O &kp SQT
    &kp LSHFT &kp Z &kp X &kp C &kp D &kp V   &kp K &kp H  &kp COMMA &kp DOT &kp FSLH &kp ESC
-                  &kp LGUI &thumb 1 BSPC &space 3 SPACE   &thm LS(LG(LC(LALT))) RET &thumb 2 ESC &kp LG(SPACE)
+                  &kp TAB &thumb 1 BSPC &space 3 SPACE   &thm LS(LG(LC(LALT))) RET &thumb 2 ESC &kp LG(SPACE)
                         >;
                 };
                 number_layer {
 // -----------------------------------------------------------------------------------------
-// |  ^   |  $  |  #  |  @  |  !  | "|" |   |  +  |  7  |  8  |  9  |  -  |  :   |
-// |      | CTL | ALT | GUI | SHFT| CAPS|   |  =  |  4  |  5  |  6  |  *  |  /   |
-// |      |     |     |     |     |     |   |  ,  |  1  |  2  |  3  |  0  |  .   |
-//                    | GUI |     | SPC |   | ENT |     | RAY |
+// |  ^   |  $  |  #  |  @  |  !  | "|" |   |  %  |  7  |  8  |  9  |  :  |     |
+// |      | CTL | ALT | GUI | SHFT| CAPS|   |  +  |  4  |  5  |  6  |  -  |     |
+// |      |     |     |     |     |     |   |  *  |  1  |  2  |  3  |  /  |     |
+//                    | TAB |     | SPC |   |  ,  |  0  |  .  |
                         display-name = "Numbers";
                         bindings = <
-   &kp CARET &kp DLLR &kp HASH &kp AT    &kp EXCL &kp PIPE    &kp PLUS  &kp N7 &kp N8 &kp N9 &kp MINUS &kp LS(SEMI)
-   &none     &kp LCTRL &kp LALT &kp LGUI &kp LSHFT &caps_word  &kp EQUAL &kp N4 &kp N5 &kp N6 &kp STAR  &kp FSLH
-   &none     &none    &none    &none     &none    &none       &kp COMMA &kp N1 &kp N2 &kp N3 &kp N0    &kp DOT
-                          	        &kp LGUI     &trans       &kp SPACE      &kp RET  &trans   &kp LG(SPACE)
+   &kp CARET &kp DLLR &kp HASH &kp AT    &kp EXCL &kp PIPE    &kp PRCNT &kp N7 &kp N8 &kp N9 &kp LS(SEMI) &none
+   &none     &kp LCTRL &kp LALT &kp LGUI &kp LSHFT &caps_word  &kp PLUS  &kp N4 &kp N5 &kp N6 &kp MINUS &none
+   &none     &none    &none    &none     &none    &none       &kp STAR  &kp N1 &kp N2 &kp N3 &kp FSLH  &none
+                                  &trans       &trans       &kp SPACE      &kp COMMA &kp N0 &kp DOT
                         >;
                 };
 
