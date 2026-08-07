@@ -167,10 +167,10 @@
 
             display-name = "Symbols";
             bindings = <
-&kp EXCL  &kp TILDE  &kp LBRC   &kp RBRC   &kp UNDER  &kp AMPS     &kp SEMI  &kp LBKT  &kp RBKT       &none     &none     &none
-&kp HASH  &kp CARET  &kp LPAR   &kp RPAR   &kp DLLR   &kp STAR     &kp DOT   &kp AT    &kp EXCL       &kp BSLH  &kp PLUS  &none
-&kp AT    &kp LT     &kp EQUAL  &kp MINUS  &kp GT     &kp GRAVE    &kp FSLH  &kp PIPE  &kp QMARK      &kp DOT   &kp FSLH  &none
-                                &kp LGUI   &kp COLON  &kp SEMI     &kp RET   &trans    &kp LG(SPACE)
+&kp EXCL  &kp TILDE  &kp LBRC   &kp RBRC     &kp UNDER  &kp AMPS     &kp SEMI  &kp LBKT  &kp RBKT       &none     &none     &none
+&kp HASH  &kp CARET  &kp LPAR   &kp RPAR     &kp DLLR   &kp STAR     &kp DOT   &kp AT    &kp EXCL       &kp BSLH  &kp PLUS  &none
+&kp AT    &kp LT     &kp EQUAL  &kp MINUS    &kp GT     &kp GRAVE    &kp FSLH  &kp PIPE  &kp QMARK      &kp DOT   &kp FSLH  &none
+                                &kp PERCENT  &kp COLON  &kp SEMI     &kp RET   &trans    &kp LG(SPACE)
             >;
         };
 
